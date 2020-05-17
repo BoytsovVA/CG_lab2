@@ -12,18 +12,19 @@ namespace Boytsov_tomogram_visualizer
 {
     public partial class Form1 : Form
     {
+        Bin bin = new Bin();
+        View view = new View();
+        bool loaded = false;
         int FrameCount;
         DateTime NextFPSUpdate = DateTime.Now.AddSeconds(1);
 
-        bool loaded = false;
         bool needReload = false;
         bool Quads1 = false;
         bool Texture1 = false;
-        Bin bin = new Bin();
-        View view = new View();
+
         int currentLayer = 1;
         int min1 = 0;
-        int width1 = 1;
+        int width = 1;
         public Form1()
         {
             InitializeComponent();
@@ -66,21 +67,21 @@ namespace Boytsov_tomogram_visualizer
                 glControl1.Invalidate();
             }
         }
+
+        [Obsolete]
         private void glControl1_Paint(object sender, PaintEventArgs e)
         {
             if (loaded)
             {
                 if (Quads1 == true)
                 {
-                    view.DrawQuads(currentLayer, min1, width1);
-                    //Texture1 = false;
+                    view.DrawQuads(currentLayer, min1, width);
                 }
                 if (Texture1 == true)
                 {
-                    // Quads1 = false;
                     if (needReload)
                     {
-                        view.generatetextureImage(currentLayer, min1, width1);
+                        view.generatetextureImage(currentLayer, min1, width);
                         view.Load2DTexture();
                         needReload = false;
 
@@ -112,7 +113,7 @@ namespace Boytsov_tomogram_visualizer
 
         private void trackBar2_Scroll_1(object sender, EventArgs e)
         {
-            width1 = trackBar2.Value * 350;
+            width = trackBar2.Value * 400;
             needReload = true;
         }
     }

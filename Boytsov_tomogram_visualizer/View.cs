@@ -1,5 +1,4 @@
-﻿
-using OpenTK;
+﻿using OpenTK;
 using OpenTK.Graphics.OpenGL;
 using System;
 using System.Collections.Generic;
@@ -23,10 +22,10 @@ namespace Boytsov_tomogram_visualizer
             GL.Ortho(0, Bin.X, 0, Bin.Y, -1, 1);
             GL.Viewport(0, 0, width, height);
         }
-        Color TransferFunction(short value, int min1, int width1)
+        Color TransferFunction(short value, int min1, int width)
         {
             int min = min1;
-            int max = min + width1;
+            int max = min + width;
             int newVal = clamp((value - min) * 255 / (max - min), 0, 255);
             return Color.FromArgb(255, newVal, newVal, newVal);
         }
@@ -37,13 +36,14 @@ namespace Boytsov_tomogram_visualizer
             if (value > max) return max;
             return value;
         }
-        public void DrawQuads(int layerNumber, int min1, int width1)
+
+        [Obsolete]
+        public void DrawQuads(int layerNumber, int min1, int width)
         {
             short value;
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
-            int k = 1;
-            layerNumber = min1 + width1 / 400;
+            layerNumber = min1 + width / 400;
 
 
             for (int y_coord = 0; y_coord < Bin.Y - 1; ++y_coord)
@@ -51,11 +51,11 @@ namespace Boytsov_tomogram_visualizer
                 GL.Begin(BeginMode.QuadStrip);
                 // вершина 1
                 value = Bin.array[0 + (y_coord) * Bin.X + layerNumber * Bin.X * Bin.Y];
-                GL.Color3(TransferFunction(value, min1, width1));
+                GL.Color3(TransferFunction(value, min1, width));
                 GL.Vertex2(0, y_coord);
                 //вершина 2
                 value = Bin.array[0 + (y_coord + 1) * Bin.X + layerNumber * Bin.X * Bin.Y];
-                GL.Color3(TransferFunction(value, min1, width1));
+                GL.Color3(TransferFunction(value, min1, width));
                 GL.Vertex2(0, y_coord + 1);
 
                 for (int x_coord = 0; x_coord < Bin.X * 2; ++x_coord)
@@ -63,11 +63,11 @@ namespace Boytsov_tomogram_visualizer
                     GL.Begin(BeginMode.QuadStrip);
                     //вершина 3
                     value = Bin.array[x_coord + 1 + (y_coord + 1) * Bin.X + layerNumber * Bin.X * Bin.Y];
-                    GL.Color3(TransferFunction(value, min1, width1));
+                    GL.Color3(TransferFunction(value, min1, width));
                     GL.Vertex2(x_coord + 1, y_coord + 1);
                     //вершина 4
                     value = Bin.array[x_coord + 1 + y_coord * Bin.X + layerNumber * Bin.X * Bin.Y];
-                    GL.Color3(TransferFunction(value, min1, width1));
+                    GL.Color3(TransferFunction(value, min1, width));
                     GL.Vertex2(x_coord + 1, y_coord);
 
 
@@ -98,17 +98,19 @@ namespace Boytsov_tomogram_visualizer
             ErrorCode Er = GL.GetError();
             string str = Er.ToString();
         }
-        public void generatetextureImage(int layerNumber, int min1, int width1)
+        public void generatetextureImage(int layerNumber, int min1, int width)
         {
             textureImage = new Bitmap(Bin.X, Bin.Y);
-            layerNumber = min1 + width1 / 200;
+            layerNumber = min1 + width / 200;
             for (int i = 0; i < Bin.X; ++i)
                 for (int j = 0; j < Bin.Y; ++j)
                 {
                     int pixelNumber = i + j * Bin.X + layerNumber * Bin.X * Bin.Y;
-                    textureImage.SetPixel(i, j, TransferFunction(Bin.array[pixelNumber], min1, width1));
+                    textureImage.SetPixel(i, j, TransferFunction(Bin.array[pixelNumber], min1, width));
                 }
         }
+
+        [Obsolete]
         public void DrawTexture()
         {
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
