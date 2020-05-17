@@ -1,0 +1,16 @@
+C:\Users\Admin\Desktop\CG\Lab2\CG_lab2\Boytsov_tomogram_visualizer\Boytsov_tomogram_visualizer\bin\Debug\Boytsov_tomogram_visualizer.exe.config
+C:\Users\Admin\Desktop\CG\Lab2\CG_lab2\Boytsov_tomogram_visualizer\Boytsov_tomogram_visualizer\bin\Debug\Boytsov_tomogram_visualizer.exe
+C:\Users\Admin\Desktop\CG\Lab2\CG_lab2\Boytsov_tomogram_visualizer\Boytsov_tomogram_visualizer\bin\Debug\Boytsov_tomogram_visualizer.pdb
+C:\Users\Admin\Desktop\CG\Lab2\CG_lab2\Boytsov_tomogram_visualizer\Boytsov_tomogram_visualizer\bin\Debug\OpenTK.dll
+C:\Users\Admin\Desktop\CG\Lab2\CG_lab2\Boytsov_tomogram_visualizer\Boytsov_tomogram_visualizer\bin\Debug\OpenTK.GLControl.dll
+C:\Users\Admin\Desktop\CG\Lab2\CG_lab2\Boytsov_tomogram_visualizer\Boytsov_tomogram_visualizer\bin\Debug\OpenTK.pdb
+C:\Users\Admin\Desktop\CG\Lab2\CG_lab2\Boytsov_tomogram_visualizer\Boytsov_tomogram_visualizer\bin\Debug\OpenTK.xml
+C:\Users\Admin\Desktop\CG\Lab2\CG_lab2\Boytsov_tomogram_visualizer\Boytsov_tomogram_visualizer\bin\Debug\OpenTK.dll.config
+C:\Users\Admin\Desktop\CG\Lab2\CG_lab2\Boytsov_tomogram_visualizer\Boytsov_tomogram_visualizer\bin\Debug\OpenTK.GLControl.xml
+C:\Users\Admin\Desktop\CG\Lab2\CG_lab2\Boytsov_tomogram_visualizer\Boytsov_tomogram_visualizer\obj\Debug\Boytsov_tomogram_visualizer.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\CG\Lab2\CG_lab2\Boytsov_tomogram_visualizer\Boytsov_tomogram_visualizer\obj\Debug\Boytsov_tomogram_visualizer.Form1.resources
+C:\Users\Admin\Desktop\CG\Lab2\CG_lab2\Boytsov_tomogram_visualizer\Boytsov_tomogram_visualizer\obj\Debug\Boytsov_tomogram_visualizer.Properties.Resources.resources
+C:\Users\Admin\Desktop\CG\Lab2\CG_lab2\Boytsov_tomogram_visualizer\Boytsov_tomogram_visualizer\obj\Debug\Boytsov_tomogram_visualizer.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\CG\Lab2\CG_lab2\Boytsov_tomogram_visualizer\Boytsov_tomogram_visualizer\obj\Debug\Boytsov_tomogram_visualizer.csproj.CopyComplete
+C:\Users\Admin\Desktop\CG\Lab2\CG_lab2\Boytsov_tomogram_visualizer\Boytsov_tomogram_visualizer\obj\Debug\Boytsov_tomogram_visualizer.exe
+C:\Users\Admin\Desktop\CG\Lab2\CG_lab2\Boytsov_tomogram_visualizer\Boytsov_tomogram_visualizer\obj\Debug\Boytsov_tomogram_visualizer.pdb
